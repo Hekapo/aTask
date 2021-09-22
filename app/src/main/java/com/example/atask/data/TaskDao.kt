@@ -23,7 +23,7 @@ interface TaskDao {
     suspend fun deleteTask(task: Task)
 
     @Query("DELETE FROM task_table")
-    suspend fun deleteAllTasks(task: Task)
+    suspend fun deleteAllTasks()
 
     @Query("SELECT * FROM task_table WHERE title LIKE :query OR description LIKE :query")
     fun searchDatabase(query: String): Flow<List<Task>>
